@@ -1,0 +1,63 @@
+/* main - top level div */
+.main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* header */
+.main header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+/* section - displays the main content */
+.main section {
+    flex-grow: 2;
+    overflow-x: hidden;
+    margin-bottom: 60px;
+}
+
+/* navigation */
+.main nav {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    /* main - layout formation */
+    .main {
+        overflow-y: hidden;
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        grid-template-rows: 80px 1fr;
+        grid-template-areas:
+            "header header"
+            "nav content"
+        ;
+    }
+
+    /* header */
+    .main header {
+        grid-area: header;
+    }
+
+    /* section - displays the main content */
+    .main section {
+        grid-area: content;
+        margin-bottom: 0;
+        margin-top: 5px;
+        padding-top: 0;
+    }
+
+    /* navigation */
+    .main nav {
+        grid-area: nav;
+        position: relative;
+        width: 100%;
+    }
+
+}
